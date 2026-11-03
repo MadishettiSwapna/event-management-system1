@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+
+    <h1>Admin Event Management</h1>
+
+    <form onsubmit="addEvent(event)">
+
+        <input type="text" id="name"
+        placeholder="Event Name" required>
+
+        <input type="date" id="date" required>
+
+        <button type="submit">Add Event</button>
+
+    </form>
+
+    <ul id="events"></ul>
+
+    <script>
+        function addEvent(e) {
+            e.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let date = document.getElementById("date").value;
+
+            let li = document.createElement("li");
+
+            li.innerHTML = name + " - " + date;
+
+            document.getElementById("events").appendChild(li);
+        }
+    </script>
+
+</body>
+</html>
